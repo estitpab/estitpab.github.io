@@ -1,0 +1,22 @@
+---
+title: Functional Component
+description: Structure d'un composant fonction React
+---
+### Structure du composant
+
+```jsx title=functionalComponent.js
+import React from 'react';
+
+const Car = ({brand='Peugeot', model='308'}) => {
+  return(
+    <div>
+      <h1>My {brand}</h1>
+      <p>
+        It is a {model}.
+      </p>
+    </div>
+  );
+}
+
+export default Car;
+```
