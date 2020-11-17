@@ -48,4 +48,5 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
   ],
+  pathPrefix: "/estitpab.github.io",
 };
