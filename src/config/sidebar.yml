@@ -1,14 +1,23 @@
 # Sidebar navigation
 
-- label: 'Introduction'
+- label: 'Main commands'
   link: '/'
-- label: 'Getting started'
-  link: '/getting-started'
+- label: React
+  items:
+    - label: 'Class component'
+      link: '/react/class-component'
+    - label: 'Functional component'
+      link: '/react/functional-component'
+- label: Redux
+  items:
+    - label: 'State global'
+      link: '/'
+
 - label: Usage
   items:
-    - label: 'Creating docs'
+    - label: 'creating-docs'
       link: '/usage/creating-docs'
-    - label: 'Navigation'
+    - label: 'navigation'
       link: '/usage/navigation'
     - label: 'Shadowing'
       link: '/usage/shadowing'
