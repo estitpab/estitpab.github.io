@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-16d878f439c5979490a9.js"
+    "url": "webpack-runtime-f6743eb920d8e193a004.js"
   },
   {
     "url": "framework-1bcdbcdd30f43763a25c.js"
@@ -36,11 +36,11 @@ self.__precacheManifest = [
     "url": "f0e45107-02a22ac72de90821f3f0.js"
   },
   {
-    "url": "app-6dd48bebf7364906cd1a.js"
+    "url": "app-4586cbc0e057f0d54ff1.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "98cc433ca535da3c4d2cf0c33cd22bae"
+    "revision": "e3d222dbc127c5845ca67b87acaf21f7"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-241020a1cf7d0f317bbe.js"
@@ -51,14 +51,14 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "6e4747b6d4516d8de2fd859c4f251b0d"
+    "revision": "15095b6023defefd44e8d2d97412cefa"
   },
   {
     "url": "polyfill-dfda8d059abd9d0298c4.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "ad74b01c86f5ce6a214879b5fe9c984a"
+    "revision": "e99995272f3898adda6980ac6b90cc64"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -145,12 +145,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/estitpab.github.io`), ``)
+  pathname = pathname.replace(new RegExp(`^`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/estitpab.github.io/app-6dd48bebf7364906cd1a.js`))) {
+  if (!resources || !(await caches.match(`/app-4586cbc0e057f0d54ff1.js`))) {
     return await fetch(event.request)
   }
 
@@ -163,7 +163,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/estitpab.github.io/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
